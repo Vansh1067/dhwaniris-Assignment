@@ -1,5 +1,10 @@
 # Dhwaniris-Assignment
 
+Add MongoDBURL to config/local.js file for local Development
+
+Add MongoDBURL to config/production.js file for Production Development 
+
+
 npm start
 
 https://localhost:3000/
