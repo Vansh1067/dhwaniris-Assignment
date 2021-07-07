@@ -1,5 +1,5 @@
 module.exports={
     JWT_SECRET:"scsavs342e#$%^#@dgsdv",
-    mongoDbURL:'mongodb+srv://vansh:Vansh1067@instagram.ftv1z.mongodb.net/Grocers?retryWrites=true&w=majority',
+    mongoDbURL:'mongodb+srv://',
     port:process.env.PORT
 }

@@ -35,16 +35,16 @@ exports.getChildDetails=(req,res,next)=>{
 
 //Add Child
 exports.addChild=(req,res,next)=>{
-    const {name,fathername,mothername,dob,sex,stateId,districtId}=req.body
-    if(!name||!fathername||!mothername||!dob||!sex||!stateId||!districtId){
+    const {name,fathername,mothername,dob,sex,stateId,districtId,photoUrl}=req.body
+    if(!name||!fathername||!mothername||!dob||!sex||!stateId||!districtId||!photoUrl){
         return next('Invalid Data')
     }
-    Child.findOne({name:name?.toLowerCase(),fathername:fathername?.toLowerCase(),mothername:mothername?.toLowerCase(),dob,sex:sex?.toLowerCase(),stateId,districtId})
+    Child.findOne({name:name?.toLowerCase(),fathername:fathername?.toLowerCase(),mothername:mothername?.toLowerCase(),dob,sex:sex?.toLowerCase(),stateId,districtId,photoUrl})
     .then(data=>{
         if(data){
             next('Child Data Already Exist')
         }else{
-            const ch=Child({name:name?.toLowerCase(),fathername:fathername?.toLowerCase(),mothername:mothername?.toLowerCase(),dob,sex:sex?.toLowerCase(),stateId,districtId})
+            const ch=Child({name:name?.toLowerCase(),fathername:fathername?.toLowerCase(),mothername:mothername?.toLowerCase(),dob,sex:sex?.toLowerCase(),stateId,districtId,photoUrl})
             ch.save().then(child=>{
                 res.json({
                     message:"Child Add Successfully",

@@ -10,6 +10,7 @@ const ChildSchema=new Schema({
     mothername:{type:Schema.Types.String,required:true},
     stateId:{type:Schema.Types.ObjectId,required:true,ref:'state'},
     districtId:{type:Schema.Types.ObjectId,required:true,ref:'district'},
+    photoUrl:{type:Schema.Types.String,required:true},
 
 
 
